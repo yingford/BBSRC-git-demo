@@ -1,4 +1,12 @@
-# R code: this code reads Lewandowsky's dataset into RStudio
+# R code: this code 
+
+# read Lewandowsky's dataset into RStudio
 df=read.table('http://data.bris.ac.uk/datasets/swyt56qr4vaj17op9cw3sag7d/LskyetalPLOSONE.csv',
               header=TRUE,sep=',')
 head(df)
+
+# run linear fit: lm
+lm.result=lm(conspiracist_avg~age,data=df)
+summary(lm.result)
+
+plot(df$age,df$conspiracist_avg)
